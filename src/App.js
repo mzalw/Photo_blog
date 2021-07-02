@@ -1,10 +1,10 @@
-import './App.css';
-import Title from './components/first_page/first_page';
+import './scss/App.css';
+import MainPage from './components/main_page/main_page';
 
 function App() {
   return (
       <>
-          <Title/>
+          <MainPage/>
       </>
   );
 }
