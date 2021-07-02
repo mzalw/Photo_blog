@@ -16,11 +16,21 @@ import React, {Component} from 'react';
 class Posts extends Component {
 
     state = {
-        counter: 0,
-        id: 0,
-        title: "B",
-        date: "01.07.2021",
-        description: "Typowe Augustowie"
+        posts: [
+            {
+                id: 0,
+                title: "przykład tytuł",
+                date: "29.07.1999",
+                description: "opis"
+            },
+            {
+                id: 1,
+                title: "przykład tytuł2",
+                date: "10.00.2000",
+                description: "opis2"
+            }
+        ]
+
     }
 
     handleData = () => {
@@ -29,15 +39,15 @@ class Posts extends Component {
         fetch(`${API}/db`)
             .then(response => response.json()).catch(error => console.log(error))
             .then(data => {
-                this.setState((prevState) => {
-                    return {
-                        counter: prevState.counter + 1,
-                        id: data.posts[this.state.counter].id,
-                        title: data.posts[this.state.counter].title,
-                        date: data.posts[this.state.counter].date,
-                        description: data.posts[this.state.counter].description
-                    }
-                })
+                data.postsDB.forEach((post) => {
+                    this.setState((prevState) => {
+                        return {
+                            posts: [...prevState.posts,
+                                post]
+                        }
+                    })
+                });
+                
             })
             .catch(error => {
                 console.log(error);
@@ -45,12 +55,19 @@ class Posts extends Component {
     }
 
     render() {
+        const elements = this.state.posts.map((post, index) => {
+            return (
+                <div key={index}>
+                    <p>{post.title}</p>
+                    <p>Post nr: {post.id} Data: {post.date}</p>
+                    <span>Opis: {post.description}</span>
+                </div>
+            );
+        })
+
         return (
             <div>
-                <p>{this.state.counter}</p>
-                <p>{this.state.title}</p>
-                <p>Post nr: {this.state.id} Data: {this.state.date}</p>
-                <span>{this.state.description}</span>
+                {elements}
                 <button onClick={this.handleData}>Klik</button>
             </div>
         );
