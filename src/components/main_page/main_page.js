@@ -1,18 +1,5 @@
 import React, {Component} from 'react';
-// import ReactDOM from 'react-dom';
 
-const API = "http://localhost:3000";
-
-fetch(`${API}/db`)
-    .then(response => response.json()).catch(error => console.log(error))
-    .then(data => {
-        console.log(data);
-        // data.posts.map((post, index) => {
-        // })
-    })
-    .catch(error => {
-        console.log(error);
-    });
 
 // const Nav = () => {
 //     return(
@@ -27,12 +14,44 @@ fetch(`${API}/db`)
 // }
 
 class Posts extends Component {
+
+    state = {
+        counter: 0,
+        id: 0,
+        title: "B",
+        date: "01.07.2021",
+        description: "Typowe Augustowie"
+    }
+
+    handleData = () => {
+        const API = "http://localhost:3000";
+
+        fetch(`${API}/db`)
+            .then(response => response.json()).catch(error => console.log(error))
+            .then(data => {
+                this.setState((prevState) => {
+                    return {
+                        counter: prevState.counter + 1,
+                        id: data.posts[this.state.counter].id,
+                        title: data.posts[this.state.counter].title,
+                        date: data.posts[this.state.counter].date,
+                        description: data.posts[this.state.counter].description
+                    }
+                })
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
     render() {
         return (
-            <div className={"container"}>
-                <p>Tytuł</p>
-                <p>Nr postu, data</p>
-                <span>Opis</span>
+            <div>
+                <p>{this.state.counter}</p>
+                <p>{this.state.title}</p>
+                <p>Post nr: {this.state.id} Data: {this.state.date}</p>
+                <span>{this.state.description}</span>
+                <button onClick={this.handleData}>Klik</button>
             </div>
         );
     }
