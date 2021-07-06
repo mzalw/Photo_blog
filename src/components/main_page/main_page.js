@@ -17,11 +17,9 @@ const Posts = () => {
             });
     }, [])
 
-    console.log(posts)
-
     return (
         <>
-            {posts.map((post, index) => {
+            {posts.map((post) => {
                 return <div key={post.id}>
                     <p>Post nr: {post.id} Data: {post.date}</p>
                     <p>{post.title}</p>
@@ -30,12 +28,46 @@ const Posts = () => {
             })}
         </>
     );
+};
+
+const Header = () => {
+    return (
+        <header>
+            <div className={"container"}>
+                <h1>Logo</h1>
+                <ul>
+                    <li><a href={"."}>O mnie</a></li>
+                    <li><a href={"."}>Kontakt</a></li>
+                    <li><a href={"."}>Dodaj post</a></li>
+                </ul>
+            </div>
+        </header>
+    );
+}
+
+const Footer = () => {
+    return (
+        <footer>
+            <div className={"container"}>
+                <div>
+                    <a href={"."}>tag</a>
+                    <a href={"."}> - tag</a>
+                    <a href={"."}> - tag</a>
+                    <a href={"."}> - tag</a>
+                    <a href={"."}> - tag</a>
+                </div>
+            </div>
+            <span>Copyright</span>
+        </footer>
+    );
 }
 
 const MainPage = () => {
     return (
         <>
+            <Header/>
             <Posts/>
+            <Footer/>
         </>
     );
 }
