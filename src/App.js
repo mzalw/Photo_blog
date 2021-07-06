@@ -1,12 +1,22 @@
 import './scss/App.css';
-import MainPage from './components/main_page/main_page';
+import Main from './components/main_page/main_page';
+import Admin from './components/admin/admin';
+import NotFound from "./components/err404";
+import {
+    HashRouter,
+    Route,
+    Switch,
+    NavLink,
+} from 'react-router-dom';
 
 function App() {
-  return (
-      <>
-          <MainPage/>
-      </>
-  );
+    return <HashRouter>
+        <Switch>
+            <Route exact path='/' component={Main}/>
+            <Route exact path='/admin' component={Admin}/>
+            <Route component={NotFound}/>
+        </Switch>
+    </HashRouter>
 }
 
 export default App;

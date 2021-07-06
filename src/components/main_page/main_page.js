@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from "react-router-dom";
 
 const Posts = () => {
 
@@ -38,7 +39,7 @@ const Header = () => {
                 <ul>
                     <li><a href={"."}>O mnie</a></li>
                     <li><a href={"."}>Kontakt</a></li>
-                    <li><a href={"."}>Dodaj post</a></li>
+                    <li><Link to={"/admin"}>Dodaj post</Link></li>
                 </ul>
             </div>
         </header>
