@@ -9,32 +9,6 @@ const Form = () => {
         description: ""
     });
 
-    const SendPost = () => {
-
-        const dateNow = new Date();
-
-        const API = "http://localhost:3000";
-
-        fetch(`${API}/db`)
-            .then(response => response.json()).catch(error => console.log(error))
-            .then(data => {
-                setForm(prevState => {
-                    return {
-                        ...prevState,
-                        id: data.postsDB.length + 1,
-                        date: `0${dateNow.getDate()}.0${dateNow.getMonth() + 1}.${dateNow.getFullYear()}`
-                    }
-                })
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-    console.log(form.id);
-    console.log(form.title);
-    console.log(form.description);
-    console.log(form.date);
-
     const handleChange = (e) => {
         const {name, value} = e.target;
         setForm(prevState => {
@@ -44,15 +18,32 @@ const Form = () => {
             }
         });
     };
-    
+
+    const sendPost = () => {
+        const dateNow = new Date();
+        const API = "http://localhost:3000/postsDB";
+
+        fetch(`${API}`,{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: form.id,
+                title: form.title,
+                date: `0${dateNow.getDate()}.0${dateNow.getMonth() + 1}.${dateNow.getFullYear()}`,
+                description: form.description
+            })
+        })
+    }
 
     return (
         <>
-            <button onClick={SendPost}>Siema</button>
             <form>
                 <input type="text" name="title" value={form.title} onChange={handleChange}/>
                 <input type="text" name="description" value={form.description} onChange={handleChange}/>
             </form>
+            <button onClick={sendPost}>Dodaj prześlij post</button>
         </>
     );
 }

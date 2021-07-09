@@ -25,6 +25,7 @@ const Posts = () => {
                     <p>Post nr: {post.id} Data: {post.date}</p>
                     <p>{post.title}</p>
                     <span>Opis: {post.description}</span>
+                    <Link to={`/posts${post.id}`}>Czytaj więcej >>></Link>
                 </div>
             })}
         </>
