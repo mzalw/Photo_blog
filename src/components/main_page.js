@@ -32,44 +32,11 @@ const Posts = () => {
     );
 };
 
-const Header = () => {
-    return (
-        <header>
-            <div className={"container"}>
-                <h1>Logo</h1>
-                <ul>
-                    <li><a href={"."}>O mnie</a></li>
-                    <li><a href={"."}>Kontakt</a></li>
-                    <li><Link to={"/admin"}>Dodaj post</Link></li>
-                </ul>
-            </div>
-        </header>
-    );
-}
-
-const Footer = () => {
-    return (
-        <footer>
-            <div className={"container"}>
-                <div>
-                    <a href={"."}>tag</a>
-                    <a href={"."}> - tag</a>
-                    <a href={"."}> - tag</a>
-                    <a href={"."}> - tag</a>
-                    <a href={"."}> - tag</a>
-                </div>
-            </div>
-            <span>Copyright</span>
-        </footer>
-    );
-}
 
 const MainPage = () => {
     return (
         <>
-            <Header/>
             <Posts/>
-            <Footer/>
         </>
     );
 }

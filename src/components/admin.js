@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
 const Form = () => {
@@ -23,9 +23,9 @@ const Form = () => {
         const dateNow = new Date();
         const API = "http://localhost:3000/postsDB";
 
-        fetch(`${API}`,{
+        fetch(`${API}`, {
             method: 'POST',
-            headers:{
+            headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -52,7 +52,6 @@ const Admin = () => {
     return (
         <>
             <h1>Dodaj post</h1>
-            <Link to={"/"}>Strona główna</Link>
             <Form/>
         </>
     );
