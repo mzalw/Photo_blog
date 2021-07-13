@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
 
 const Form = () => {
+
     const [form, setForm] = useState({
         id: 0,
         title: "",
-        date: "",
-        description: ""
+        description: "",
+        date: ""
     });
 
     const handleChange = (e) => {
@@ -20,28 +20,37 @@ const Form = () => {
     };
 
     const sendPost = () => {
-        const dateNow = new Date();
-        const API = "http://localhost:3000/postsDB";
+        if (form.title === "") {
+            alert("Podaj tytuł")
+        } else if (form.description === "") {
+            alert("Podaj opis")
+        } else {
+            alert('Gratulacje dodano post')
+            const dateNow = new Date();
+            const API = "http://localhost:3000/postsDB";
 
-        fetch(`${API}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                id: form.id,
-                title: form.title,
-                date: `0${dateNow.getDate()}.0${dateNow.getMonth() + 1}.${dateNow.getFullYear()}`,
-                description: form.description
+            fetch(`${API}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: form.id,
+                    title: form.title,
+                    date: `${dateNow.getDate()}.${dateNow.getMonth() + 1}.${dateNow.getFullYear()}`,
+                    description: form.description
+                })
             })
-        })
+        }
     }
 
     return (
         <>
             <form>
+                <label>Tytuł</label>
                 <input type="text" name="title" value={form.title} onChange={handleChange}/>
-                <input type="text" name="description" value={form.description} onChange={handleChange}/>
+                <label>Opis</label>
+                <textarea name="description" value={form.description} onChange={handleChange}/>
             </form>
             <button onClick={sendPost}>Dodaj prześlij post</button>
         </>
