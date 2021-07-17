@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import photo from "../images/first_page.jpg"
 
 const Post = ({match}) => {
 
@@ -20,11 +21,20 @@ const Post = ({match}) => {
     }, [])
 
     return (
-        <>
-            <h1>{post.title}</h1>
-            <p>{post.date}</p>
-            <span>{post.description}</span>
-        </>
+        <div className={"post__box"}>
+            <div className={"container post"}>
+                <h1 className={"posts__title"}>{post.title}</h1>
+                <p className={"posts__date"}>{post.date}</p>
+                <div className={"post__photo__box"}>
+                    <div className={"post__photo__container"}>
+                        <img className={"posts__photo"} src={photo}/>
+                    </div>
+                </div>
+                <div className={"post__description__box"}>
+                    <span className={"post__description"}>{post.description}</span>
+                </div>
+            </div>
+        </div>
     );
 }
 

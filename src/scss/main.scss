@@ -5,7 +5,7 @@
   .main-Cont {
     flex-direction: column;
 
-    .post {
+    .posts {
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -14,35 +14,7 @@
       margin-bottom: 50px;
       padding: 20px;
 
-      .post__title {
-        font-weight: 600;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        margin-bottom: 5px;
-      }
-
-      .post__date {
-        font-weight: 300;
-        font-size: 0.8rem;
-        margin-bottom: 20px;
-        color: rgb(180, 180, 180);
-      }
-      .post__photo__box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .post__photo__container {
-          height: 460px;
-          width: 600px;
-          margin-bottom: 20px;
-          .post__photo {
-            height: 100%;
-            width: 100%;
-          }
-        }
-      }
-
-      .post__description {
+      .posts__description {
         font-size: 0.9rem;
         margin-bottom: 10px;
       }
@@ -51,6 +23,41 @@
         color: rgb(150, 150, 150);
         font-size: 0.9rem;
       }
+
+      a:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+.posts__title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.posts__date {
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  color: rgb(180, 180, 180);
+}
+
+.posts__photo__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .posts__photo__container {
+    height: 460px;
+    width: 600px;
+    margin-bottom: 20px;
+
+    .posts__photo {
+      height: 100%;
+      width: 100%;
     }
   }
 }

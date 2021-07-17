@@ -10,8 +10,8 @@ header{
   .head{
     justify-content: space-around;
     .logo__cont{
-      width: 200px;
-      height: 80px;
+      width: 180px;
+      height: 70px;
       background-image: url("../images/logo.PNG");
       background-position: center;
       background-repeat: no-repeat;
@@ -24,12 +24,13 @@ header{
         display: flex;
         justify-content: center;
         align-items: center;
-        color: black;
+        color: rgb(150, 150, 150);
         height: 80px;
         padding: 0 20px;
       }
       .nav__item:hover{
         background-color: rgb(245, 245, 245);
+        color: black;
       }
     }
   }
