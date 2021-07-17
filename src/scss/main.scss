@@ -1,0 +1,56 @@
+.main {
+  display: flex;
+  justify-content: center;
+
+  .main-Cont {
+    flex-direction: column;
+
+    .post {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      background-color: white;
+      box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.13);
+      margin-bottom: 50px;
+      padding: 20px;
+
+      .post__title {
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      .post__date {
+        font-weight: 300;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+        color: rgb(180, 180, 180);
+      }
+      .post__photo__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .post__photo__container {
+          height: 460px;
+          width: 600px;
+          margin-bottom: 20px;
+          .post__photo {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+
+      .post__description {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: rgb(150, 150, 150);
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

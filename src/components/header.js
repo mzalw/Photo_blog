@@ -4,15 +4,13 @@ import React from "react";
 const Header = () => {
     return (
         <header>
-            <div className={"container"}>
-                <Link to='/'>
-                    <h1>Logo</h1>
-                </Link>
-                <ul>
-                    <li><Link to={"."}>O mnie</Link></li>
-                    <li><Link to={"."}>Kontakt</Link></li>
-                    <li><Link to={"/admin"}>Dodaj post</Link></li>
-                </ul>
+            <div className={"container head"}>
+                <Link className={"logo__cont"} to='/'></Link>
+                <nav>
+                    <li className={"nav__item__li"}><Link className={"nav__item"} to={"."}>O MNIE</Link></li>
+                    <li className={"nav__item__li"}><Link className={"nav__item"} to={"."}>KONTAKT</Link></li>
+                    <li className={"nav__item__li"}><Link className={"nav__item"} to={"/admin"}>DODAJ POST</Link></li>
+                </nav>
             </div>
         </header>
     );

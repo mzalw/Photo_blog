@@ -1,0 +1,13 @@
+footer{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 70%;
+  height: 6%;
+  width: 100%;
+  box-shadow: 0 -5px 10px 5px rgba(0,0,0,0.13);
+  background-color: rgb(24, 24, 24);
+  color: rgb(79, 79, 79);
+  list-style: none;
+  a{color: rgb(79, 79, 79);}
+}

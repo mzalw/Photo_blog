@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from "react-router-dom";
+import photo from "../images/first_page.jpg"
 
 const Posts = () => {
 
@@ -21,25 +22,32 @@ const Posts = () => {
     return (
         <>
             {posts.map((post) => {
-                return <div key={post.id}>
-                    <p>Post nr: {post.id} Data: {post.date}</p>
-                    <p>{post.title}</p>
-                    <span>Opis: {post.description}</span>
-                    <Link to={`/posts${post.id}`}>Czytaj więcej >>></Link>
+                return <div className={"post"} key={post.id}>
+                    <p className={"post__title"}>{post.title}</p>
+                    <p className={"post__date"}>{post.date}</p>
+                    <div className={"post__photo__box"}>
+                        <div className={"post__photo__container"}>
+                            <img className={"post__photo"} src={photo}/>
+                        </div>
+                    </div>
+                    <span className={"post__description"}>{post.description}</span>
+                    <Link to={`/posts${post.id}`}>Czytaj więcej &#8594;</Link>
                 </div>
             })}
-        </>
-    );
-};
+                </>
+                );
+            };
 
 
-const MainPage = () => {
-    return (
-        <>
+            const MainPage = () => {
+            return (
+            <section className={"main"}>
+            <div className={"container main-Cont"}>
             <Posts/>
-        </>
-    );
-}
+            </div>
+            </section>
+            );
+        }
 
 
-export default MainPage
+            export default MainPage
