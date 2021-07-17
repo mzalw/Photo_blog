@@ -46,23 +46,27 @@ const Form = () => {
 
     return (
         <>
-            <form>
-                <label>Tytuł</label>
-                <input type="text" name="title" value={form.title} onChange={handleChange}/>
-                <label>Opis</label>
-                <textarea name="description" value={form.description} onChange={handleChange}/>
+            <form className={"form"}>
+                <label className={"form__label"}>Tytuł</label>
+                <input className={"form__title__input"} type="text" name="title" value={form.title}
+                       onChange={handleChange}/>
+                <label className={"form__label"}>Opis</label>
+                <textarea className={"form__textarea"} name="description" value={form.description}
+                          onChange={handleChange}/>
             </form>
-            <button onClick={sendPost}>Dodaj prześlij post</button>
+            <button className={"form__button"} onClick={sendPost}>Dodaj prześlij post</button>
         </>
     );
 }
 
 const Admin = () => {
     return (
-        <>
-            <h1>Dodaj post</h1>
-            <Form/>
-        </>
+        <div className={"admin__box"}>
+            <div className={"container admin"}>
+                <h1 className={"posts__title"}>Dodaj post</h1>
+                <Form/>
+            </div>
+        </div>
     );
 }
 

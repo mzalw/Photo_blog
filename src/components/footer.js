@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer>
             <div className={"container foot"}>
-                <span>© 2021 by mzalw</span>
+                <a className={"footer__copyright"} href={'https://github.com/mzalw'}>© 2021 by mzalw</a>
             </div>
         </footer>
     );
