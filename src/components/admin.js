@@ -29,6 +29,15 @@ const Form = () => {
             const dateNow = new Date();
             const API = "http://localhost:3000/postsDB";
 
+            let properDayFormat = dateNow.getDate();
+            let properMonthFormat = dateNow.getMonth() + 1;
+
+            if (dateNow.getDate() < 9) {
+                properDayFormat = `0${properDayFormat}`
+            } else if (dateNow.getMonth() < 9) {
+                properMonthFormat = `0${properMonthFormat}`
+            }
+
             fetch(`${API}`, {
                 method: 'POST',
                 headers: {
@@ -37,7 +46,7 @@ const Form = () => {
                 body: JSON.stringify({
                     id: form.id,
                     title: form.title,
-                    date: `${dateNow.getDate()}.${dateNow.getMonth() + 1}.${dateNow.getFullYear()}`,
+                    date: `${properDayFormat}.${properMonthFormat}.${dateNow.getFullYear()}`,
                     description: form.description
                 })
             })

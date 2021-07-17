@@ -9,7 +9,6 @@ const Post = ({match}) => {
         const API = "http://localhost:3000";
         const postID = match.params.id.slice(1, 2);
 
-
         fetch(`${API}/db`)
             .then(response => response.json()).catch(error => console.log(error))
             .then(data => {
@@ -27,7 +26,7 @@ const Post = ({match}) => {
                 <p className={"posts__date"}>{post.date}</p>
                 <div className={"post__photo__box"}>
                     <div className={"post__photo__container"}>
-                        <img className={"posts__photo"} src={photo}/>
+                        <img className={"posts__photo"} src={photo} alt={post.id}/>
                     </div>
                 </div>
                 <div className={"post__description__box"}>

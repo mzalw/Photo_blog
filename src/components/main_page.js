@@ -21,33 +21,33 @@ const Posts = () => {
 
     return (
         <>
-            {posts.map((post) => {
+            { posts.map((post) => {
                 return <div className={"posts"} key={post.id}>
                     <p className={"posts__title"}>{post.title}</p>
                     <p className={"posts__date"}>{post.date}</p>
                     <div className={"posts__photo__box"}>
                         <div className={"posts__photo__container"}>
-                            <img className={"posts__photo"} src={photo}/>
+                            <img className={"posts__photo"} src={photo} alt={post.id}/>
                         </div>
                     </div>
                     <span className={"posts__description"}>{post.description}</span>
                     <Link to={`/posts${post.id}`}>Czytaj więcej &#8594;</Link>
                 </div>
             })}
-                </>
-                );
-            };
+        </>
+    );
+};
 
 
-            const MainPage = () => {
-            return (
-            <section className={"main"}>
+const MainPage = () => {
+    return (
+        <section className={"main"}>
             <div className={"container main-Cont"}>
-            <Posts/>
+                <Posts/>
             </div>
-            </section>
-            );
-        }
+        </section>
+    );
+}
 
 
-            export default MainPage
+export default MainPage

@@ -2,33 +2,15 @@
   "postsDB": [
     {
       "id": 1,
-      "title": "Bulwar Augustów",
-      "date": "1.7.2021",
-      "description": "Typowe miejsce spotkań wieczorami w Augustowie"
+      "title": "Bulwar augustów",
+      "date": "17.07.2021",
+      "description": "Typowe miejsce spotkań wieczorami w Augustowie."
     },
     {
       "id": 2,
-      "title": "Starówka Gdańsk",
-      "date": "2.7.2021",
-      "description": "Szybka wycieczka nad morze"
-    },
-    {
-      "id": 3,
-      "title": "Gubałówka",
-      "date": "3.7.2021",
-      "description": "Piękne widoki"
-    },
-    {
-      "id": 4,
-      "title": "Wakacje chrowacja",
-      "date": "10.7.2021",
-      "description": "Piękna plaża i okolice"
-    },
-    {
-      "id": 5,
-      "title": "Wakacje chrowacja",
-      "date": "17.7.2021",
-      "description": "Siemano ja na chorwacji\n"
+      "title": "Zachód słońca nad Neckiem",
+      "date": "17.07.2021",
+      "description": "Piękny zachód aż dech zapiera"
     }
   ]
 }
